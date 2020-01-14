@@ -1,11 +1,13 @@
 const express = require('express');
 const Users = require('./data/db.js');
+const Cors = require('cors');
 const server = express();
-const cors = require('cors');
 const port = 8000;
 
 server.use(express.json());
-server.use(cors());
+server.use(Cors());
+
+
 
 server.get('/', (req, res) => {
     res.send('This is a GET request on /');
